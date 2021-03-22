@@ -1,0 +1,25 @@
+{
+  "name": "MVC-Tech-Blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byourey/MVC-Tech-Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byourey/MVC-Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/byourey/MVC-Tech-Blog#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "sequelize": "^6.6.1"
+  }
+}
