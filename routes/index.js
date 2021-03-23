@@ -1,31 +1,46 @@
-const express = require("express");
-const router = express.Router();
-const db = require('../config/database');
+const express = require('express');
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
+const path = require('path');
 
+const helpers = require('./utils/helpers');
 
-// Display post
-router.get('/', (req, res) => {
-    
-})
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({ helpers });
 
-// Add a post
-router.post('/addblog', (req, res) => {
-    const data ={
-        title: 'Why I like coding',
-        description: 'Just like architecture, which is an art used by people daily and affects their everyday life, so is code. You can create something and people interact with, use, touch and work with. That is an amazing feeling.'
-        
-    }
+const session = require('express-session');
 
-    let { title, description } = data;
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Insert into table
-Blog.create({
-    title: title,
-    description: description
-     }).then(())
-     .catch((err) => console.log(err));
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const sess = {
+  secret: 'bigbluedog',
+  cookie: {
+        // Session will automatically expire in 10 minutes
+        expires: 10 * 60 * 1000
+  },
+  resave: true,
+  rolling: true,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  }),
+};
+
+app.use(session(sess));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(routes);
+
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-module.exports = router;
