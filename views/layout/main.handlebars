@@ -16,8 +16,8 @@
         <nav class="navbar mt-2">
             {{#if loggedIn}}
             <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/profile" class="navbar-item is-hoverable pt-1">dashboard</a>
-            <a href="/profile/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
             <button id="logout" class="button is-danger">logout</button>
             {{else}}
             <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
@@ -34,8 +34,8 @@
         <div class="row-is-full content has-text-centered">
             <p>
             <a href="/">homepage</a>{{#if loggedIn}} | 
-            <a href="/profile/">dashboard</a> | 
-            <a href="/profile/create/">create new blog</a>
+            <a href="/dashboard/">dashboard</a> | 
+            <a href="/dashboard/create/">create new blog</a>
             {{else}}
              | <a href="/login/">login</a>
             {{/if}}
