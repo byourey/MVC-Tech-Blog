@@ -6,16 +6,16 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n');
+    console.log('\n-- DATABASE IS NOW SYNCED --\n');
   
   await seedUsers();
-    console.log('\n----- USERS SEEDED -----\n');
+    console.log('\n--USERS ARE SEEDED --\n');
   
   await seedBlogs();
-    console.log('\n----- BLOGS SEEDED -----\n');
+    console.log('\n-- BLOGS HAVE BEEN SEEDED --\n');
 
   await seedComments();
-    console.log('\n----- COMMENTS SEEDED -----\n');
+    console.log('\n-- COMMENTS ARE SEEDED --\n');
 
   process.exit(0);
 };
