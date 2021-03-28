@@ -63,26 +63,7 @@
     align-items: center;
   }
   
-  /* main {
-    flex: 1;
-    padding: 2% 4%;
-  } */
-  
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    color: lightblue;
-    font-size: 100%;
-    margin-left: 10px;
-  }
-  
- 
-  .delete-post-btn {
-    background-color: black;
-  }
-  
- 
+    
   .post {
     margin-bottom: 4%;
     line-height: 130%;
@@ -107,15 +88,7 @@
     margin-bottom: 1%;
   }
   
-  /* .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  } */
   
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
   
   .edit-post-form {
     margin-bottom: 5%;
