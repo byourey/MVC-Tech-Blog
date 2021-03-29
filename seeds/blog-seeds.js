@@ -17,11 +17,6 @@ const blogData = [
         blog_content: "Adults went to school learning about all the things they thought they'd ever need to learn about, and coding wasn't one of those things.",
         user_id: 2
     },
-    {
-        title: "Can I code remotely",
-        blog_content: "But the best part about coding careers, as I mentioned, is that you can do the vast majority of them remotely,",
-        user_id: 4
-    }
 ]
 
 const seedBlogs = () => Blog.bulkCreate(blogData);
