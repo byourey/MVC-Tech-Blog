@@ -9,34 +9,29 @@ Blog.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
-    post_title: {
+    title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    post_text: {
-      type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+    blog_content: {
+      type: DataTypes.TEXT,
+      allowNull: true
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
-      },
-    },
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'blog'
   }
 );
 
