@@ -1,6 +1,6 @@
 <article>
-  <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
-  <h2 class="title mt-5">edit post</h2><hr>
+  <a href="/dashboard"> &larr; back to dashboard</a>
+  <h2 class="title mt-3">edit post</h2><hr>
   <form class="edit-blog-form">
     <div>
         <label for="post-title">post title:</label>
@@ -8,19 +8,19 @@
     </div>
     <div>
         <label for="post-content">post content:</label>
-      <input class="textarea" name="post-content" type="text" value="{{blog.post_content}}" />
+      <input class="textarea" name="post-content" type="text" value="{{blog.blog_content}}" />
     </div>
     <div class="is-pulled-right">
        created by you on {{format_date blog.created_at}}
       |
-      <a href="/post/{{post.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
+      <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
     </div>
-    <button type="submit" class="button is-success">save post</button>
-    <button type="button" class="button is-danger delete-post-btn">delete post</button>
+    <button type="submit" class="button is-white">save post</button>
+    <button type="button" class="button is-warning delete-post-btn">delete post</button>
   </form>
 </article>
 
-{{> comments post.comments}}
+{{> comments blog.comments}}
 
 <script src="/javascript/edit-blog.js"></script>
 <script src="/javascript/delete-blog.js"></script>
